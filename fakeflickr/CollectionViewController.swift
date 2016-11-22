@@ -24,7 +24,9 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
             (data, error) in
             self.photoUrls = self.flickrService.generatePhotoUrls(data: data)
             print(self.photoUrls)
-            
+            DispatchQueue.main.async(execute: { 
+                self.collectionView?.reloadData()
+            })
         }
     }
     
@@ -34,14 +36,14 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 14
+        return self.photoUrls.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
       cell.backgroundColor = UIColor.black
         
-      let url = URL(string: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT49md2-g0REsg7747eYEAtdaoo7nD6zGhao5rdY8E72RtV0VFc8Q")
+      let url = URL(string: self.photoUrls[indexPath.row])
         
       do{
         let imageData = try Data(contentsOf: url!)
