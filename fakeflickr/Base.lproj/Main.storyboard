@@ -30,8 +30,19 @@
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="153" height="175"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q3j-qh-cl6">
+                                            <rect key="frame" x="0.0" y="8" width="158" height="177"/>
+                                        </imageView>
+                                    </subviews>
                                 </view>
                                 <color key="backgroundColor" red="0.16416703986610759" green="1" blue="0.018283570047102793" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="q3j-qh-cl6" firstAttribute="centerX" secondItem="dt9-fw-AIx" secondAttribute="centerX" id="6n2-SP-Mtp"/>
+                                    <constraint firstItem="q3j-qh-cl6" firstAttribute="centerY" secondItem="dt9-fw-AIx" secondAttribute="centerY" id="Amv-Rm-2ap"/>
+                                    <constraint firstItem="q3j-qh-cl6" firstAttribute="width" secondItem="dt9-fw-AIx" secondAttribute="width" id="Gyu-Mj-SiP"/>
+                                    <constraint firstItem="q3j-qh-cl6" firstAttribute="height" secondItem="dt9-fw-AIx" secondAttribute="height" id="I6M-Ij-U53"/>
+                                </constraints>
                             </collectionViewCell>
                         </cells>
                         <connections>
